@@ -1,0 +1,18 @@
+<ion-view view-title="Login" ng-controller="LoginCtrl">
+  <ion-content class="padding tabs-item-hide">
+    <h2 class="text-center">Welcome to BookShare</h2>
+    <form ng-submit="validateLogin()">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="Username" ng-model="username">
+        </label>
+        <label class="item item-input">
+          <input type="password" placeholder="Password" ng-model="password">
+        </label>
+      </div>
+      <button class="button button-block button-calm">Login</button>
+    </form>
+    <p class="text-center"><a href="#/auth/forgot">Forgot your username/password?</a></p>
+    <p class="text-center"><div ng-bind="status"></div></p>
+  </ion-content>
+</ion-view>

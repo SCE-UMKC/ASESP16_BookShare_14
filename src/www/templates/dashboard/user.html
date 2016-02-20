@@ -1,0 +1,18 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Search.." ng-model="search">
+      </label>
+    </div>
+
+    <ion-list>
+      <h3>Available Books</h3>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="book in books | filter:search" type="item-text-wrap" href="#/dashboard/book-details/{{book.id}}">
+        <img ng-src="{{book.image}}">
+        <h2>{{book.name}}</h2>
+        <p>{{book.author}}</p>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
