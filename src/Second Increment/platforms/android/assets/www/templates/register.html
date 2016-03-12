@@ -1,0 +1,17 @@
+<ion-view view-title="Register">
+  <ion-content class="padding tabs-item-hide">
+    <h2 class="text-center">Welcome to BookShare</h2>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="email" placeholder="you@mail.umkc.edu" ng-model="data.email" required>
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="data.password" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Full Name" ng-model="data.fullname" required>
+      </label>
+    </div>
+    <button class="button button-block button-calm" ng-click="register(data.email, data.password, data.fullname)">Signup</button>
+  </ion-content>
+</ion-view>
