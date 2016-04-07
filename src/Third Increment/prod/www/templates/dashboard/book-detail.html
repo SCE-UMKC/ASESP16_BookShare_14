@@ -1,0 +1,17 @@
+<ion-view view-title="{{book.name}}">
+  <ion-content class="padding">
+    <img ng-src="{{book.image}}" style="width: 64px; height: 64px">
+    <p>
+      <b>Author</b>: {{book.author}}
+    </p>
+    <p>
+      <b>ISBN</b>: {{book.isbn}}
+    </p>
+    <button class="button button-balanced icon-left ion-bookmark">
+      Add to Wishlist
+    </button>
+    <hr>
+    This book is available for borrowing from {{book.user}}.<br>
+    <button class="button button-assertive icon-left ion-chatbox">Borrow from {{book.user}}</button>
+  </ion-content>
+</ion-view>

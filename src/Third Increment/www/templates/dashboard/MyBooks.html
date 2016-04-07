@@ -1,0 +1,28 @@
+<ion-view view-title="My Books">
+  <ion-content class="padding">
+      <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="init()">
+      </ion-refresher>
+      <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Search Books.." ng-model="search">
+          </label>
+      </div>
+      <div class="card" ng-show="!myBooks.length">
+        <div class="item item-inset">
+          <div class="bar bar-header bar-assertive"><strong>No Books available</strong></div>
+        </div>
+      </div>
+      <div class="list" ng-repeat="data in myBooks = (response| filter:search)">
+        <a class="item item-thumbnail-left" href="#/dashboard/book-details/{{data._id}}">
+          <img src="{{data.coverimg}}">
+          <h2>{{data.book_title}}</h2>
+          <p>by <span ng-repeat="a in data.author">{{a}}</span> - {{data.category}}</p>
+          <p>ISBN: {{data.ISBN}}</p>
+        </a>
+      </div>
+      
+  </ion-content>
+</ion-view>
+

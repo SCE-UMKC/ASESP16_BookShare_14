@@ -1,0 +1,19 @@
+<ion-view view-title="My Account">
+  <ion-content class="padding">
+      
+      <div class="list">
+        <a class="item item-avatar" href="#">
+          <img src="http://gravatar.com/avatar/{{userimg}}">
+          <h2>{{username}}</h2>
+          <p>{{useremail}}</p>
+        </a>
+    </div>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="password" placeholder="New Password" ng-model="password">
+      </label>
+      <button class="button button-assertive icon-left ion-upload" style="margin-top:10px">Save</button>
+      <button class="button button-energized icon-left ion-power" style="margin-top:10px" ng-click="logout()">Logout</button>
+  </ion-content>
+</ion-view>
+

@@ -1,0 +1,35 @@
+<ion-view view-title="Register">
+  <ion-content class="padding tabs-item-hide">
+    <h2 class="text-center"><img src="img/logo.png"></h2>
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="email" placeholder="you@mail.umkc.edu" ng-model="email" required>
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="password" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Full Name" ng-model="fullname" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Phone Number" ng-model="phone" required>  
+      </label>
+      <label class="item item-input">
+        <select ng-model="secret">
+            <option value="What is your pet's name?" selected>What is your pet's name?</option>
+            <option value="What is your favorite Vacation spot?">What is your favorite Vacation spot?</option>
+            <option value="What is your favorite Movie?">What is your favorite Movie?</option>
+            <option value="What is your favorite Subject?">What is your favorite Subject?</option>
+        </select>
+      </label>
+     
+      <label class="item item-input">
+        <input type="text" placeholder="Answer" ng-model="secret_answer" required>  
+      </label>
+    </div>
+    <button class="button button-block button-calm" ng-click="register(email, password, fullname, phone, secret, secret_answer)">Signup</button>
+      <div class="bar bar-header bar-balanced" ng-show="registrationStatus">
+          <h1 class="title">{{message}}</h1>
+      </div>
+  </ion-content>
+</ion-view>

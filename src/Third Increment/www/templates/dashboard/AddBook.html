@@ -1,0 +1,96 @@
+<ion-view view-title="Add New Book" name="tab-addbook">
+  <ion-content class="padding">
+      <label class="item item-input">
+        <input type="text" placeholder="Book Title" ng-model="bookname" required>
+      </label>
+      
+      <label class="item item-input">
+        <input type="text" placeholder="ISBN" ng-model="ISBN" required>
+      </label>
+      
+      <label class="item item-input">
+        <input type="text" placeholder="Author(s)" ng-model="author" required>
+      </label>
+      
+    <button class="button button-block button-calm" ng-click="addBook(bookname, ISBN, author)">Verify</button>
+      
+      <div class="list card" ng-show="showResult">
+    
+          <div class="item">
+            <h2><strong>{{response.items[0].volumeInfo.title}}</strong></h2>
+            <p>by {{response.items[0].volumeInfo.authors[0]}}</p>
+          </div>
+
+          <div class="item item-body">
+            <img class="small-image" style="float:left; margin-right:10px" src="{{response.items[0].volumeInfo.imageLinks.thumbnail}}">
+
+              {{response.items[0].volumeInfo.description}}
+              <div class="list card">
+
+                    <div class="item item-icon-left"><i class="icon ion-ios-book-outline"></i>Published by {{response.items[0].volumeInfo.publisher}} in {{response.items[0].volumeInfo.publishedDate}} with {{response.items[0].volumeInfo.pageCount}} pages under {{response.items[0].volumeInfo.categories[0]}}.</div>
+
+                    <div class="item item-icon-left"><i class="icon ion-information-circled"></i>{{response.items[0].searchInfo.textSnippet}}</div>
+                    
+                </div>
+              <button class="button button-assertive" ng-click="assertBookDetails()">This is the Book!</button>
+          </div>
+
+        </div>
+      
+          <div class="list card" ng-show="showNotFoundError">
+
+              <div class="item">
+                <h2><strong>We are unable to verify the information provided!</strong></h2>
+              </div>
+              <form ng-submit="addBookManually()">
+                  <div class="item item-body">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Book Title</span>
+                        <input type="text" placeholder="Book Title" ng-model="bookname" required>
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">ISBN</span>
+                        <input type="text" placeholder="ISBN" ng-model="ISBN" required>
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Authors</span>
+                        <input type="text" placeholder="Author(s)" ng-model="author" required>
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Category</span>
+                        <input type="text" placeholder="Category" ng-model="category">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Publisher</span>
+                        <input type="text" placeholder="Publisher" ng-model="publisher">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Year Published</span>
+                        <input type="text" placeholder="Year Published" ng-model="year">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Page Count</span>
+                        <input type="text" placeholder="Page Count" ng-model="pagecount">
+                    </label>
+
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Description</span>
+                        <textarea placeholder="Book Description" ng-model="description"></textarea>
+                    </label>
+
+                      <button class="button button-assertive">Add Book!</button>
+
+
+                  </div>
+                </form>
+
+            </div>
+  </ion-content>
+</ion-view>
+

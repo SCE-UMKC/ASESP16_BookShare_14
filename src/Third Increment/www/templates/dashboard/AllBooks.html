@@ -1,0 +1,24 @@
+<ion-view view-title="Books Repository">
+  <ion-content class="padding">
+      <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Search Books.." ng-model="search">
+          </label>
+      </div>
+      
+      <div class="card" ng-show="!allBooks.length">
+        <div class="item item-inset">
+          <div class="bar bar-header bar-assertive"><strong>No Books found!</strong></div>
+        </div>
+      </div>
+      <div class="list" ng-repeat="data in allBooks = (response| filter:search)">
+        <a class="item item-thumbnail-left" href="#/dashboard/book-details/{{data._id}}">
+          <img src="{{data.coverimg}}">
+          <h2>{{data.book_title}}</h2>
+          <p>by <span ng-repeat="a in data.author">{{a}}</span> - {{data.category}}</p>
+          <p>ISBN: {{data.ISBN}}</p>
+        </a>
+      </div>
+  </ion-content>
+</ion-view>
+
