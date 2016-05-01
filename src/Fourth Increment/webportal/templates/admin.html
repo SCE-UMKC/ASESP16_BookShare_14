@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+    
+    <h3>Users</h3>
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <th>Email</th>
+            <th>Full Name</th>
+            <th>Actions</th>
+        </thead>
+        <tr data-ng-repeat="data in users">
+            <td>{{data.email}}</td>
+            <td>{{data.full_name}}</td>
+            <td><button type="button" class="btn btn-warning" ng-click="DeleteUser(data._id)">Delete</button></td>
+        </tr>
+    </table>
+    
+    <h3>Books</h3>
+    
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </thead>
+        <tr data-ng-repeat="data in books">
+            <td>{{data.book_title}}</td>
+            <td>{{data.author}}</td>
+            <td>{{data.email}}</td>
+            <td><button type="button" class="btn btn-warning" ng-click="DeleteBook(data._id)">Delete</button></td>
+        </tr>
+    </table>
+    </div>
+</div>

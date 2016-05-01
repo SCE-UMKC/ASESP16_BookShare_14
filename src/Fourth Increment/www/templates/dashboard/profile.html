@@ -1,0 +1,35 @@
+<ion-view view-title="{{user.full_name}}">
+  <ion-content class="padding">
+      <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="init()">
+      </ion-refresher>
+      <div class="list">
+        <div class="item item-thumbnail-left">
+          <img src="http://www.gravatar.com/avatar/{{hash}}?d=http%3A%2F%2Fblog.nature.org%2Fconservancy%2Fwp-content%2Fplugins%2Fall-in-one-seo-pack%2Fimages%2Fdefault-user-image.png">
+          <h2>{{user.full_name}}</h2>
+          <p>{{user.Location}}</p>
+          <p>Interests: {{user.Interests}}</p>
+        </div>
+      </div>
+      
+      <h4><i class="ion-location"></i> {{user.Location}}</h4>
+      <div class="list">
+          <div class="item">
+            <div id="map_canvas" style="width: 100%px;height: 300px"></div>
+          </div>
+      </div>
+      
+      <h4><i class="ion-ios-book-outline"></i> Books added by {{user.full_name}}</h4>
+      <div class="list" ng-repeat="data in books">
+        <a class="item item-thumbnail-left" href="#/dashboard/book-details/{{data._id}}">
+          <img src="{{data.coverimg}}">
+          <h2>{{data.book_title}}</h2>
+          <p>by <span ng-repeat="a in data.author">{{a}}</span> - {{data.category}}</p>
+          <p>ISBN: {{data.ISBN}}</p>
+        </a>
+      </div>
+      
+  </ion-content>
+</ion-view>
+

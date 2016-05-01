@@ -1,0 +1,53 @@
+<ion-view view-title="{{response.book_title}}">
+  <ion-content class="padding">
+      <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="init()">
+      </ion-refresher>
+    <div class="list">
+
+        <div class="item item-thumbnail-left">
+          <img src="{{coverimg}}">
+          <h2>{{response.book_title}}</h2>
+          <p>ISBN: {{response.ISBN}}</p>
+          <p>By <span ng-repeat="a in response.author">{{a}}</span>  - {{response.category}}</p>
+          <p>Publisher: {{response.publisher}}</p>
+        </div>
+        <div class="card">
+            <div class="item item-text-wrap">
+                {{response.description}}<i class="ion-ios-volume-high" ng-click="bookDetailsSpeech()"></i>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="item item-text-wrap">
+                <p>Rating: {{response.avgRating}} / 5</p>
+                <p>Price: {{bookPrice}} <span class="icon-amazon"></span></p>
+                <p>Paperback: {{response.pageCount}} pages</p>
+                <p>Popularity Rank: {{amznData[0].SalesRank[0]}}</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="item item-text-wrap">
+                <p><a class="button button-block icon-left icon-amazon button-positive" href="{{amznData[0].DetailPageURL[0]}}">Buy from Amazon</a></p>
+                <p><a class="button button-block icon-left icon-heart button-assertive" ng-disabled="wishlistCtrl" ng-click="addToWishlist()">Add to Wishlist</a></p>
+                <p><a class="button button-block icon-left ion-ios-flame button-calm" ng-click="getCustomerReviews()">Reviews</a></p>
+            </div>
+        </div>
+    </div>
+    <h3><i class="ion-person-stalker"></i> This book is Available with {{availableWith.length}} users.</h3><br>
+    <div class="list" ng-repeat="user in availableWith">
+        <div class="item item-avatar item-icon-right">
+            <img src="http://www.gravatar.com/avatar/{{avatar[$index]}}">
+            <a href="#/dashboard/profile/{{user.email}}">{{user.fullName}}</a>
+            <i ng-click="sendRequest('{{user._id}}', '{{user.email}}', '{{fullName}}', '{{user.fullName}}')" class="icon ion-ios-cart" ng-hide="ownBook[$index]"></i>
+        </div>  
+    </div>
+      
+    <div ng-show="customerreviews" id="reviews">
+        <h3><i class="ion-ios-flame"></i> Customer Reviews</h3>
+        <iframe src="{{customerReviews}}" width="100%"></iframe>
+    </div>  
+  </ion-content>
+</ion-view>

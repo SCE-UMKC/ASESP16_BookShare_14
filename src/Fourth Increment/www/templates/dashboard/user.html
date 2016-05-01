@@ -1,0 +1,30 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+      <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="init()">
+      </ion-refresher>
+    <div class="list list-inset">
+        <h3>Hello {{userfullname}}</h3>
+          <div class="bar bar-header bar-calm" ng-show="statusMsg">
+              <h1 class="title">{{message}}</h1>
+          </div>
+        <a class="button button-block button-assertive icon-left ion-upload" style="margin:10px 0 10px 0" href="#/dashboard/addBook">Add New Book</a>
+        <a class="button button-block button-calm icon-left ion-ios-book" style="margin:10px 0 10px 0" href="#/dashboard/myBooks">My Books</a>
+        <a class="button button-block button-balanced icon-left ion-android-notifications" style="margin:10px 0 10px 0" href="#/dashboard/notifications">Notifications <span class="count">{{dashboardData.length}}</span></a>
+        <a class="button button-block button-energized icon-left ion-ios-personadd" style="margin:10px 0 10px 0" href="#/dashboard/invite">Invite Friends</a>
+      <label class="item item-input">
+        <input type="text" placeholder="Search.." ng-model="search">
+      </label>
+    </div>
+
+    <ion-list>
+      <h3>Newly added Books</h3>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="book in newBooks | filter:search | orderBy : '-timestamp' | limitTo:5" type="item-text-wrap" href="#/dashboard/book-details/{{book._id}}">
+        <img ng-src="{{book.coverimg}}">
+        <h2>{{book.book_title}}</h2>
+        <p><span ng-repeat="author in book.author">{{author}} </span></p>
+        <p class="book-meta">Added <span am-time-ago="book.timestamp" title="{{book.timestamp | date: 'MMM dd, yyyy @ HH:mm'}}"></span></p>
+    </ion-list>
+  </ion-content>
+</ion-view>

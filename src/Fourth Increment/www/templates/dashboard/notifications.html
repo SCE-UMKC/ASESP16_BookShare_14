@@ -1,0 +1,33 @@
+<ion-view view-title="Notifications">
+  <ion-content class="padding">
+      <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="init()">
+      </ion-refresher>
+      <div class="card" ng-show="!notificationsData.length">
+        <div class="item item-inset text-center">
+          <div><strong><i class="ion-happy-outline"></i> No New Notifications!</strong></div>
+        </div>
+        </div>
+    <div ng-repeat="notifications in notificationsData | orderBy : '-timestamp'">
+      <div class="item item-avatar">
+        <img src="https://gravatar.com/avatar/{{avatar[$index]}}">
+        <h2>{{notifications.fullName}} has requested you a Book.</h2>
+        <p><p class="book-meta"><span am-time-ago="notifications.timestamp" title="{{notifications.timestamp | date: 'MMM dd, yyyy @ HH:mm'}}"></span></p></p>
+      </div>
+        
+      <div class="item item-body">
+        <img class="small-image" style="float:left;padding-right:10px" src="{{bookData[$index].coverimg}}">
+        <p>{{bookData[$index].description}}</p>
+        <p>ISBN: {{bookData[$index].ISBN}}</p>
+        <p>Author: <span ng-repeat="author in bookData[$index].author">{{author}}</span></p>
+        <p>Published by {{bookData[$index].publisher}} in {{bookData[$index].pubyear}}</p>
+        <p>
+          <a class="button button-calm icon-left ion-checkmark-circled" ng-click="acceptRequest('{{notifications._id}}')">Accept</a>
+          <a class="button button-assertive icon-left ion-close-circled" ng-click="declineRequest('{{notifications._id}}')">Dismiss</a>
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+
