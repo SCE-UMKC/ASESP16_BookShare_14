@@ -26,3 +26,6 @@ Class ID | Team Member Name
 29       | Latha M
 17       | Raja Ramya J
          
+Technologies - AngularJS, Nodejs, MongoDB
+
+Made with ❤ in Kansas City.
