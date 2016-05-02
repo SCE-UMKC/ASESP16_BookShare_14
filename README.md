@@ -1,5 +1,5 @@
 # Advanced Software Engineering
-## Team Project
+## Team Project - #14
 ## [BookShare](http://104.131.189.244/#/) 
 
 ### Resources
@@ -26,4 +26,4 @@ Class ID | Team Member Name
 29       | Latha M
 17       | Raja Ramya J
          
-Technologies - AngularJS, Nodejs, MongoDB.
+Technologies used - AngularJS, Nodejs, MongoDB.
