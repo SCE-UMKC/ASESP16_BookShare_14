@@ -27,7 +27,7 @@ Class ID | Team Member Name
 ---------|------------------
 49       | Pallavi R
 21       | Swetha Chandra K
-29       | Latha M
 17       | Raja Ramya J
+29       | Latha M
          
 Technologies used - AngularJS, Nodejs, MongoDB.
