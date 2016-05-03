@@ -17,6 +17,10 @@ Sno      | Resource                 | Link
 APP ID: C303DCF6
 ```
 
+### Video
+[!Watch on YouTube (https://img.youtube.com/vi/3YTdOQ--KqM/0.jpg)]
+(https://www.youtube.com/watch?v=3YTdOQ--KqM)
+
 ###Team Details
 
 Class ID | Team Member Name
