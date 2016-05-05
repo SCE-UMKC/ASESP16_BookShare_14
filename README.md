@@ -1,10 +1,11 @@
 # Advanced Software Engineering
 ## Team Project - #14
-## [BookShare](http://104.131.189.244/#/) 
+[![BookShare] (http://i.imgur.com/umVuZZr.png)]
+(http://104.131.189.244/#/)
 
 ### Resources
 Sno      | Resource                 | Link
----------|--------------------------|-------------------------------------------------------------------------------------------------
+---------|--------------------------|--------------------------------------------------------------------------------------
 1        | APK File                 | [apk/BookShare.apk] (https://github.com/pr3md/ase-project-team14/tree/master/APK)
 2        | First Increment Report   | [documentation/FirstIncrementReport.pdf](https://github.com/pr3md/ase-project-team14/blob/master/documentation/FirstIncrementReport.pdf)
 3        | Second Increment Report  | [documentation/SecondIncrement](https://github.com/pr3md/ase-project-team14/blob/master/documentation/2nd%20Increment.pdf)
