@@ -1,7 +1,0 @@
-{
-    "jscodehints.detectedExclusions": [
-        "C:/Users/Bhavi/Documents/GitHub/project_14/src/Second Increment/platforms/android/cordova/lib/builders/GradleBuilder.js",
-        "C:/Users/Bhavi/Documents/GitHub/project_14/src/Second Increment/platforms/android/cordova/lib/builders/builders.js",
-        "C:/Users/Bhavi/Documents/GitHub/project_14/src/Second Increment/platforms/android/cordova/lib/builders/GenericBuilder.js"
-    ]
-}
