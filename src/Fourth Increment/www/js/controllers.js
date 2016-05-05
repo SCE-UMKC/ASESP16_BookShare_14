@@ -795,6 +795,7 @@ angular.module('starter.controllers', ['angular-md5', 'angularMoment'])
         $scope.customerreviews = true;
         $scope.customerReviews = $scope.amznData[0].CustomerReviews[0].IFrameURL[0];
         $scope.customerReviews = $sce.trustAsResourceUrl($scope.customerReviews);
+        console.log($scope.customerReviews);
     }
     
     $scope.addToWishlist = function(docId) {
